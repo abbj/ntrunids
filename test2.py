@@ -39,13 +39,13 @@ if __name__ == '__main__':
 
     
     """)
-    parser.add_option("-M" ,"--set_message",dest="umessage",type="string",help="generer une cle publique")
+    parser.add_option("-M" ,"--set_message",dest="umessage",type="string",help="")
 
-    parser.add_option("-P" ,"--set_public_key",type="string",dest="upublickey",help="generer une cle publique")
+    parser.add_option("-P" ,"--set_public_key",type="string",dest="upublickey",help="")
 
-    parser.add_option("-o" ,"--option",dest="uoption",type="string",help="generer une cle publique")
+    parser.add_option("-o" ,"--option",dest="uoption",type="string",help="")
 
-    parser.add_option("-r" ,"--rr",dest="umc",type="string",help="generer une cle publique")
+    parser.add_option("-r" ,"--rr",dest="umc",type="string",help="")
 
     parser.add_option("-n","--n",dest="un",type="int",help="random v")
     parser.add_option("-p","--p",dest="up",type="int",help="random v")
@@ -58,7 +58,7 @@ if __name__ == '__main__':
 
         print(parser.usage)
         exit(0)
-    elif options.uoption=="1":
+    elif options.uoption=="1" and options.un != None and options.up != None and options.uq != None :
         n=int(options.un)
         p=int(options.up)
         q=int(options.uq)
@@ -73,7 +73,7 @@ if __name__ == '__main__':
         print "*****",type(pub_key)
         print "les parametres: n={} p={} q={} la cle publique {}".format(n,p,q,pub_key)
 
-    elif options.uoption=="2":
+    elif options.uoption=="2" and options.uoption=="1" and options.un != None and options.up != None and options.uq != None and options.upublickey!=None and options.umessage !=None:
 
 
         n = int(options.un)
@@ -96,7 +96,7 @@ if __name__ == '__main__':
         ranPol = [-1, -1, 1, 1]
         encrypt_msg = V2.encrypt(msg, ranPol)
         print "Encrypted Message          : ", encrypt_msg
-    elif options.uoption=="3":
+    elif options.uoption=="3" and options.umc!=None:
         n = int(options.un)
         p = int(options.up)
         q = int(options.uq)
@@ -112,3 +112,6 @@ if __name__ == '__main__':
         V1.genPublicKey(f, g, 2)
 
         print "plain text message :",V1.decrypt(message_crypte)
+    else:
+        print(parser.usage)
+        exit(0)
