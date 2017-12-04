@@ -22,7 +22,7 @@ if __name__ == '__main__':
                 
     -n parametre 1
     -p parametre 2
-    -q parametre 2
+    -q parametre 3
     -P [public key]
     
     -M message (list)
