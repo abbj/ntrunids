@@ -29,13 +29,13 @@ if __name__ == '__main__':
     -r message crypte
     
     example 1: generation d'une clé public:
-    script.py -option1 -g -n 11 -p 20 -q 300 
+    python2.7 ntrunids.py -o 1 -n 11 -p 20 -q 300 
     
     exemple 2: (cryptage de message) avec clé public: 
-    python2.7 test2.py -n 11 -p 20 -q 300 -o 2 -P "[108, 116, 101, 71, 255, 124, 115, 279, 20, 128, 183]" -M "[1, 0, 1, 0, 1, 1, 1]"
+    python2.7 ntrunids.py -n 11 -p 20 -q 300 -o 2 -P "[108, 116, 101, 71, 255, 124, 115, 279, 20, 128, 183]" -M "[1, 0, 1, 0, 1, 1, 1]"
     
     exemple 3: decryptage
-    python2.7 test2.py -n 11 -p 20 -q 300 -o 3 -r "[141, 240, 281, 140, 221, 61, 241, 0, 0, 120, 60]"
+    python2.7 ntrunids.py -n 11 -p 20 -q 300 -o 3 -r "[141, 240, 281, 140, 221, 61, 241, 0, 0, 120, 60]"
 
     
     """)
